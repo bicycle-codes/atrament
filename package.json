@@ -53,6 +53,7 @@
     }
   },
   "devDependencies": {
+    "auto-changelog": "^2.4.0",
     "esbuild": "^0.21.3"
   }
 }
