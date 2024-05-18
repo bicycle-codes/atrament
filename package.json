@@ -1,6 +1,6 @@
 {
   "name": "@bicycle-codes/atrament",
-  "version": "4.3.1",
+  "version": "4.3.2",
   "description": "Tiny JS library for beautiful drawing and handwriting on the HTML Canvas",
   "main": "./dist/cjs/index.js",
   "files": [
@@ -53,7 +53,6 @@
     }
   },
   "devDependencies": {
-    "auto-changelog": "^2.4.0",
     "esbuild": "^0.21.3"
   }
 }
