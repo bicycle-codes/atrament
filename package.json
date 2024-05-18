@@ -11,7 +11,11 @@
     "start": "esbuild --bundle ./demo/demo.js --outfile=demo/main.js --servedir=demo",
     "build": "rollup --config",
     "watch": "rollup --config --watch",
-    "lint": "./node_modules/eslint/bin/eslint.js ./src"
+    "lint": "./node_modules/eslint/bin/eslint.js ./src",
+    "preversion": "npm run lint",
+    "version": "auto-changelog -p --template keepachangelog --breaking-pattern 'BREAKING CHANGE:' && git add CHANGELOG.md",
+    "postversion": "git push --follow-tags && npm publish",
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -49,6 +53,7 @@
     }
   },
   "devDependencies": {
+    "auto-changelog": "^2.4.0",
     "esbuild": "^0.21.3"
   }
 }
