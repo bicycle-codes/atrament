@@ -1,10 +1,14 @@
 {
-  "name": "atrament",
-  "version": "4.4.0",
+  "name": "@bicycle-codes/atrament",
+  "version": "4.3.2",
   "description": "Tiny JS library for beautiful drawing and handwriting on the HTML Canvas",
   "main": "./dist/cjs/index.js",
+  "files": [
+    "dist/*"
+  ],
   "module": "./dist/esm/index.js",
   "scripts": {
+    "start": "esbuild --bundle ./demo/demo.js --outfile=demo/main.js --servedir=demo",
     "build": "rollup --config",
     "watch": "rollup --config --watch",
     "lint": "./node_modules/eslint/bin/eslint.js ./src"
@@ -43,5 +47,8 @@
     "rollup-plugin-web-worker-loader": {
       "rollup": "$rollup"
     }
+  },
+  "devDependencies": {
+    "esbuild": "^0.21.3"
   }
 }
