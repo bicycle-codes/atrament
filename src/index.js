@@ -123,8 +123,10 @@ export default class Atrament extends AtramentEventTarget {
     const procX = x - (x - prevX) * smoothingFactor;
     const procY = y - (y - prevY) * smoothingFactor;
 
-    // recalculate distance from previous point, this time relative to the smoothed coords
+    // recalculate distance from previous point, this time relative to the
+    // smoothed coords
     const dist = lineDistance(procX, procY, prevX, prevY);
+    if (prevX === 0 && prevY === 0) return { x: procX, y: procY };
 
     // Adaptive stroke allows an effect where thickness changes
     // over the course of the stroke. This simulates the variation in
