@@ -6,6 +6,7 @@ export default {
   output: [
     {
       file: 'dist/index.min.js',
+      format: 'esm',
       plugins: [
         terser(),
       ],
@@ -13,6 +14,9 @@ export default {
     {
       file: 'dist/index.min.cjs',
       format: 'cjs',
+      plugins: [
+        terser(),
+      ],
       exports: 'named',
     },
   ],
