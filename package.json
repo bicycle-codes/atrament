@@ -9,7 +9,9 @@
   "module": "./dist/esm/index.js",
   "scripts": {
     "start": "esbuild --bundle ./demo/demo.js --outfile=demo/main.js --servedir=demo",
-    "build": "rollup --config",
+    "build": "rm -rf ./dist/* && mkdir -p ./dist && npm run build:max && npm run build:min",
+    "build:max": "rollup --config",
+    "build:min": "rollup --config rollup.config.min.mjs",
     "watch": "rollup --config --watch",
     "lint": "./node_modules/eslint/bin/eslint.js ./src",
     "preversion": "npm run lint",
@@ -35,8 +37,12 @@
   "homepage": "https://github.com/bicycle-codes/atrament#readme",
   "exports": {
     ".": {
-      "import": "./dist/esm/index.js",
-      "require": "./dist/cjs/index.js"
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./min": {
+      "import": "./dist/index.min.js",
+      "require": "./dist/index.min.cjs"
     }
   },
   "dependencies": {
