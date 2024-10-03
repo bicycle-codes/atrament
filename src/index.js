@@ -52,6 +52,7 @@ export default class Atrament extends AtramentEventTarget {
     super();
 
     this.canvas = Atrament.#setupCanvas(selector, config);
+    // canvas context
     this.#context = Atrament.#setupContext(this.canvas, config);
     this.#setupFill();
 
