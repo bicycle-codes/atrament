@@ -19,22 +19,6 @@
     "postversion": "git push --follow-tags && npm publish",
     "prepublishOnly": "npm run build"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/bicycle-codes/atrament.git"
-  },
-  "keywords": [
-    "canvas",
-    "drawing",
-    "handwriting",
-    "graphics"
-  ],
-  "author": "Jakub Fiala",
-  "license": "SEE LICENSE IN LICENSE.md",
-  "bugs": {
-    "url": "https://github.com/bicycle-codes/atrament/issues"
-  },
-  "homepage": "https://github.com/bicycle-codes/atrament#readme",
   "exports": {
     ".": {
       "import": "./dist/index.js",
@@ -53,13 +37,29 @@
     "rollup": "^4.9.4",
     "rollup-plugin-web-worker-loader": "^1.6.1"
   },
+  "devDependencies": {
+    "auto-changelog": "^2.4.0",
+    "esbuild": "^0.24.0"
+  },
   "overrides": {
     "rollup-plugin-web-worker-loader": {
       "rollup": "$rollup"
     }
   },
-  "devDependencies": {
-    "auto-changelog": "^2.4.0",
-    "esbuild": "^0.21.3"
-  }
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bicycle-codes/atrament.git"
+  },
+  "keywords": [
+    "canvas",
+    "drawing",
+    "handwriting",
+    "graphics"
+  ],
+  "author": "Jakub Fiala",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "bugs": {
+    "url": "https://github.com/bicycle-codes/atrament/issues"
+  },
+  "homepage": "https://github.com/bicycle-codes/atrament#readme"
 }
