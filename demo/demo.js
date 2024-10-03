@@ -14,8 +14,10 @@ const { x, y } = rect;
 const atrament = new Atrament(canvas, {
   // width: canvas.offsetWidth + 20,
   // height: canvas.offsetHeight + 20,
-  width: canvas.offsetWidth + x,
-  height: canvas.offsetHeight + y,
+  // width: canvas.offsetWidth + x,
+  // height: canvas.offsetHeight + y,
+  width: canvas.offsetWidth,
+  height: canvas.offsetHeight,
 });
 
 console.log('canvas', canvas);
