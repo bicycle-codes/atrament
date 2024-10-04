@@ -52,6 +52,7 @@ export default class Atrament extends AtramentEventTarget {
     super();
 
     this.canvas = Atrament.#setupCanvas(selector, config);
+    // canvas context
     this.#context = Atrament.#setupContext(this.canvas, config);
     this.#setupFill();
 
@@ -312,8 +313,9 @@ export default class Atrament extends AtramentEventTarget {
   #pointerMove(event) {
     const positions = event.getCoalescedEvents?.() || [event];
     positions.forEach((position) => {
-      const x = position.offsetX;
-      const y = position.offsetY;
+      const rect = this.canvas.getBoundingClientRect();
+      const x = position.offsetX - rect.top;
+      const y = position.offsetY - rect.left;
 
       // draw if we should draw
       if (this.#mouse.down && pathDrawingModes.includes(this.#mode)) {
