@@ -8,14 +8,18 @@ canvas {
   left: 0; */
   top: 20px;
   left: 20px;
-  position: fixed;
+  /* position: fixed; */
   z-index: 2;
+
+  margin-left: 6rem;
 }
 
 body {
   --grid-size: 20px;
   background-size: var(--grid-size) var(--grid-size);
   background-color: rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: space-between;
   background-image: radial-gradient(
     circle,
     rgba(0, 0, 0, 0.2) 1px,
@@ -27,6 +31,10 @@ body {
   margin: 2rem;
   min-width: 100vw;
   min-height: 100vh;
+
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
 }
 
 form {
