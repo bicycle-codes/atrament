@@ -312,8 +312,9 @@ export default class Atrament extends AtramentEventTarget {
 
   #pointerMove(event) {
     const positions = event.getCoalescedEvents?.() || [event];
+    const rect = this.canvas.getBoundingClientRect();
+
     positions.forEach((position) => {
-      const rect = this.canvas.getBoundingClientRect();
       const x = position.offsetX - rect.top;
       const y = position.offsetY - rect.left;
 
